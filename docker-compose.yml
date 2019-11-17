@@ -1,0 +1,30 @@
+version: '2'
+services:
+  panda-eureka:
+    build:
+      context: ./
+      dockerfile: ./panda-eureka/Dockerfile
+    restart: always
+    container_name: panda-eureka
+    image: panda-eureka
+    ports:
+    - 8761:8761
+
+  panda-config:
+    build:
+      context: ./
+      dockerfile: ./panda-config/Dockerfile
+    restart: always
+    container_name: panda-config
+    image: panda-config
+    ports:
+    - 8888:8888
+  panda-monitor:
+    build:
+      context: ./
+      dockerfile: ./panda-visual/panda-monitor/Dockerfile
+    restart: always
+    image: panda-monitor
+    container_name: panda-monitor
+    ports:
+    - 9999:9999

@@ -5,6 +5,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>panda-eureka</module>
+        <module>panda-visual</module>
+        <module>panda-config</module>
     </modules>
     <groupId>cn.smdq.ch</groupId>
     <artifactId>panda</artifactId>
@@ -15,7 +17,7 @@
     <properties>
         <java.version>1.8</java.version>
         <lombok.version>1.16.22</lombok.version>
-        <spring-boot.admin></spring-boot.admin>
+        <spring-boot-admin.version>2.1.0</spring-boot-admin.version>
         <spring-boot.version>2.1.2.RELEASE</spring-boot.version>
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
     </properties>
@@ -34,6 +36,11 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
         </dependency>
+        <!--断路器依赖 hystrix-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
@@ -51,6 +58,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-dependencies</artifactId>
+                <version>${spring-boot-admin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -62,5 +76,12 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>panda-group</id>
+            <url>http://nexus3.smdq-ch.cn/repository/panda-group/</url>
+        </repository>
+    </repositories>
 
 </project>

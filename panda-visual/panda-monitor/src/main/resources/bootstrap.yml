@@ -1,0 +1,41 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: panda-monitor
+#  cloud:
+#    config:
+#      name: ${spring.application.name}
+#      profile: ${spring.profiles.active}
+#      discovery:
+#        service-id: panda-config
+#        enabled: true
+  profiles:
+    active: dev
+  security:
+    user:
+      name: panda
+      password: panda
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: ${spring.application.name}
+    lease-renewal-interval-in-seconds: 5
+    health-check-url-path: /actuator/health
+    metadata-map:
+      user.name: panda
+      user.password: panda
+    lease-expiration-duration-in-seconds: 20
+  client:
+    service-url:
+      defaultZone: http://panda:panda@localhost:8761/eureka/
+    registry-fetch-interval-seconds: 10
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
