@@ -8,7 +8,7 @@ services:
     container_name: panda-eureka
     image: panda-eureka
     ports:
-    - 8761:8761
+     - 8761:8761
 
   panda-config:
     build:
@@ -17,8 +17,10 @@ services:
     restart: always
     container_name: panda-config
     image: panda-config
+    depends_on:
+     - "panda-eureka"
     ports:
-    - 8888:8888
+     - 8888:8888
   panda-monitor:
     build:
       context: ./
@@ -26,5 +28,8 @@ services:
     restart: always
     image: panda-monitor
     container_name: panda-monitor
+    depends_on:
+     - "panda-eureka"
+     - "panda-config"
     ports:
-    - 9999:9999
+     - 9999:9999
