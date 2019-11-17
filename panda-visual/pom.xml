@@ -12,7 +12,7 @@
     <artifactId>panda-visual</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>monitor</module>
+        <module>panda-monitor</module>
     </modules>
 
 
