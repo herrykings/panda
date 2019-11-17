@@ -6,7 +6,7 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 RUN mkdir -p /opt/panda-eureka
 
-WORKDIR opt/panda-monitor
+WORKDIR opt/panda-eureka
 
 EXPOSE 8761
 
