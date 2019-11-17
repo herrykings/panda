@@ -1,5 +1,6 @@
 panda-eureka/target/**
-
+panda-config/target/**
+panda-visual/**/target/**
 
 *.iml
 *.idea
