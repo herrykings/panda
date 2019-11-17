@@ -1,0 +1,5 @@
+panda-eureka/target/**
+
+
+*.iml
+*.idea
