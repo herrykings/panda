@@ -1,4 +1,5 @@
-FROM anapsix/alpine-java:8_server-jre_unlimited
+FROM openjdk:8-alpine
+#FROM anapsix/alpine-java:8_server-jre_unlimited
 
 MAINTAINER 1184219041@qq.com
 
@@ -6,7 +7,7 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 RUN mkdir -p /opt/panda-eureka
 
-WORKDIR opt/panda-eureka
+WORKDIR /opt/panda-eureka
 
 EXPOSE 8761
 

@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   panda-eureka:
     build:
@@ -17,6 +17,8 @@ services:
     restart: always
     container_name: panda-config
     image: panda-config
+    links:
+     - panda-eureka:panda-eureka
     depends_on:
      - "panda-eureka"
     ports:
@@ -28,6 +30,8 @@ services:
     restart: always
     image: panda-monitor
     container_name: panda-monitor
+    links:
+     - panda-eureka:panda-eureka
     depends_on:
      - "panda-eureka"
      - "panda-config"

@@ -28,7 +28,7 @@ eureka:
     lease-expiration-duration-in-seconds: 20
   client:
     service-url:
-      defaultZone: http://panda:panda@localhost:8761/eureka/
+      defaultZone: http://panda:panda@panda-eureka:8761/eureka/
     registry-fetch-interval-seconds: 10
 
 management:

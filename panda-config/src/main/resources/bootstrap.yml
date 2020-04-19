@@ -22,7 +22,7 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://panda:panda@localhost:8761/eureka/
+      defaultZone: http://panda:panda@panda-eureka:8761/eureka/
 
 # 暴露监控端点
 management:

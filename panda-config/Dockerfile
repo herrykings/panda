@@ -1,4 +1,5 @@
-FROM anapsix/alpine-java:8_server-jre_unlimited
+FROM openjdk:8-alpine
+#FROM anapsix/alpine-java:8_server-jre_unlimited
 
 MAINTAINER 1184219041@qq.com
 
