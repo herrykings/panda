@@ -10,12 +10,12 @@ spring:
 eureka:
   server:
     enable-self-preservation: false
-    renewal-percent-threshold: 0.85
+    #renewal-percent-threshold: 0.85
     eviction-interval-timer-in-ms: 5000
-    peer-node-read-timeout-ms: 10000
+    #peer-node-read-timeout-ms: 10000
   client:
     service-url:
-      defaultZone: http://panda:panda@localhost:8761/eureka/
+      defaultZone: http://panda:panda@panda-eureka:8761/eureka/
     register-with-eureka: false
     fetch-registry: false
   instance:

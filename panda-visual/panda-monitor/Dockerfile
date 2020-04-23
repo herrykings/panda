@@ -3,6 +3,9 @@ FROM openjdk:8-alpine
 
 MAINTAINER 1184219041@qq.com
 
+RUN set -xe \
+    &&  apk add --no-cache bash curl
+
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 RUN mkdir -p /opt/panda-monitor
